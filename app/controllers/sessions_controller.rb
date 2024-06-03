@@ -18,7 +18,8 @@ class SessionsController < ApplicationController
 else 
   flash["notice"] = "Incorrect User or Password"
   redirect_to "/login"
-
+end
+end
   def destroy
     # logout the user
     flash["notice"] = "Goodbye."
