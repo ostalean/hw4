@@ -21,9 +21,7 @@
     <nav class="navbar bg-primary mb-3" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Tacostagram</a>
-        <span class="flash-notice">
-      <%= flash["notice"] %>
-    </span>
+        
         <span class="navbar-text">
          
           <% @user = User.find_by({ "id" => session["user_id"] }) %>
@@ -39,6 +37,13 @@
   
     
 <div class="container">
+
+<% if flash["notice"] %>
+  <div class="alert alert-primary mt-3">
+    <%= flash["notice"] %>
+  </div>
+<% end %>
+
     <%= yield %>
   </div>
   </body>
